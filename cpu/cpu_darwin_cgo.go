@@ -12,6 +12,10 @@ package cpu
 #include <mach/host_info.h>
 #include <TargetConditionals.h>
 #if TARGET_OS_MAC
+#if TARGET_OS_IPHONE  //Iphone build check to differentiate between iPhone and Mac
+#define IOS 1 //dummy define
+#endif
+#elif
 #include <libproc.h>
 #endif
 #include <mach/processor_info.h>
